@@ -16,6 +16,7 @@ import FontFamily from "@tiptap/extension-font-family"
 import TextStyle from "@tiptap/extension-text-style"
 import Highlight from "@tiptap/extension-highlight"
 import { Color } from "@tiptap/extension-color"
+import Link from "@tiptap/extension-link"
 
 export const Editor = () => {
   const { setEditor } = useEditorStore()
@@ -35,6 +36,11 @@ export const Editor = () => {
       }),
       ImageResize,
       FontFamily,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+        defaultProtocol: "https",
+      }),
       Table.configure({
         resizable: true,
       }),
@@ -96,7 +102,7 @@ export const Editor = () => {
   }
 
   return (
-    <div className="size-full overflow-x-auto bg-neutral-100 px-4 print:p-0 print:bg-white print:overflow-visible">
+    <div className="size-full overflow-x-auto bg-secondary px-4 print:p-0 print:bg-white print:overflow-visible">
       <div className="min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0">
         <EditorContent editor={editor} />
       </div>

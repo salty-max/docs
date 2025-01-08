@@ -108,33 +108,37 @@ export const Toolbar = () => {
   ]
 
   return (
-    <div className="bg-neutral-50 px-2.5 py-0.5 rounded-sm min-h-10 flex items-center gap-x-0.5 overflow-x-auto">
+    <div className="bg-background text-foreground px-2.5 py-0.5 min-h-10 flex items-center gap-x-0.5 overflow-x-auto">
       {sections[0].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}
-      <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <SectionSeparator />
       <FontFamilyButton />
-      <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <SectionSeparator />
       <HeadingLevelButton />
-      <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <SectionSeparator />
       {/* TODO: Font size */}
-      <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <SectionSeparator />
       {sections[1].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}
       <TextColorButton />
       <HighlightColorButton />
-      <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <SectionSeparator />
       {/* TODO: Link */}
       {/* TODO: Code */}
       {/* TODO: Image */}
       {/* TODO: Align */}
       {/* TODO: Line height */}
       {/* TODO: List */}
-      <Separator orientation="vertical" className="h-6 bg-neutral-300" />
+      <SectionSeparator />
       {sections[2].map((item) => (
         <ToolbarButton key={item.label} {...item} />
       ))}
     </div>
   )
 }
+
+const SectionSeparator = () => (
+  <Separator orientation="vertical" className="h-6 bg-border" />
+)

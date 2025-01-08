@@ -19,7 +19,7 @@ export const HighlightColorButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="h-7 min-w-7 shrink-0 flex flex-col items-center gap-y-1 justify-center rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden text-sm">
+        <button className="h-7 min-w-7 shrink-0 flex flex-col items-center gap-y-1 justify-center rounded-sm hover:bg-secondary hover:text-secondary-foreground px-1.5 overflow-hidden text-sm">
           <HighlighterIcon className="size-4" />
           <div className="h-0.5 w-full" style={{ backgroundColor: value }} />
         </button>
