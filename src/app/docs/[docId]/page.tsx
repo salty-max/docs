@@ -1,10 +1,17 @@
-interface DocPageProps {
+import { Editor } from "@/components/editor"
+
+interface DocumentPageProps {
   params: Promise<{ docId: string }>
 }
 
-const DocPage = async ({ params }: DocPageProps) => {
+const DocumentPage = async ({ params }: DocumentPageProps) => {
   const { docId } = await params
-  return <div>Doc id: {docId}</div>
+
+  return (
+    <div className="min-h-screen bg-neutral-50">
+      <Editor />
+    </div>
+  )
 }
 
-export default DocPage
+export default DocumentPage
