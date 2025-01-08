@@ -3,10 +3,7 @@ interface DocumentsLayoutProps {
 }
 
 const DocumentsLayout = ({ children }: DocumentsLayoutProps) => (
-  <main className="flex flex-col gap-y-4">
-    <nav className="w-full bg-red-500">Document navbar</nav>
-    {children}
-  </main>
+  <main className="flex flex-col gap-y-4">{children}</main>
 )
 
 export default DocumentsLayout
